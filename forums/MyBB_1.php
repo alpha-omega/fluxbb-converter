@@ -390,7 +390,7 @@ class MyBB_1 extends Forum
 			$this->fluxbb->db->add_field('users', 'salt', 'VARCHAR(255)', true, '', 'password') or conv_error('Unable to add field', __FILE__, __LINE__, $this->db->error());
 
 		$result = $this->db->query_build(array(
-			'SELECT'	=> 'uid AS id, username AS username, password AS password, email, avatar, salt AS salt, website AS url, icq AS icq, msn AS msn, aim AS aim, yahoo AS yahoo, postnum AS num_posts, IF(hideemail=1, 1, 0) AS email_setting, timezone, lastpost AS last_post, lastvisit AS last_visit, signature, regip AS registration_ip, regdate AS registered, usergroup AS group_id',
+			'SELECT'	=> 'uid AS id, username AS username, password AS password, email, avatar, salt AS salt, website AS url, msn AS msn, aim AS aim, yahoo AS yahoo, postnum AS num_posts, IF(hideemail=1, 1, 0) AS email_setting, timezone, lastpost AS last_post, lastvisit AS last_visit, signature, regip AS registration_ip, regdate AS registered, usergroup AS group_id',
 			'FROM'		=> 'users',
 			'WHERE'		=> 'uid > '.$start_at,
 			'ORDER BY'	=> 'uid ASC',
